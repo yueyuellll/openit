@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>道歉小网页</title>
+  <style>
+    body {
+      background-color: #fff0f5;
+      color: #d63384;
+      font-family: "Arial", "微软雅黑", sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-size: 1.5em;
+      text-align: center;
+    }
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 1em;
+      border: none;
+      border-radius: 10px;
+      background-color: #ffb6c1;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #ff69b4;
+    }
+    #extra, #dogStep, #final {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div id="main">
+    💗 抱歉啦，原谅我嘛 💖<br><br>
+    <button onclick="disagree()">不同意</button>
+    <button onclick="agree()">同意</button>
+  </div>
+
+  <div id="extra" style="display: none;">
+    🥰 我原谅你了～<br><br>
+    <button onclick="removeDog()">我同意去掉一个狗头 🐶</button>
+  </div>
+
+  <div id="dogStep" style="display: none;">
+    ❤️ 爱你 ❤️
+  </div>
+
+  <div id="refuse" style="display: none; color: red;">
+    😠 不行！
+  </div>
+
+  <script>
+    function disagree() {
+      document.getElementById("refuse").style.display = "block";
+      document.getElementById("extra").style.display = "none";
+      document.getElementById("dogStep").style.display = "none";
+    }
+
+    function agree() {
+      document.getElementById("extra").style.display = "block";
+      document.getElementById("refuse").style.display = "none";
+      document.getElementById("dogStep").style.display = "none";
+    }
+
+    function removeDog() {
+      document.getElementById("dogStep").style.display = "block";
+    }
+  </script>
+</body>
+</html>
